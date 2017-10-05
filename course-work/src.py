@@ -30,6 +30,12 @@ def main():
 
 		img_out = frame.copy()
 		kp, desc = detector.detectAndCompute(img_in, None)
+
+		# for debug
+		print(type(kp))
+		print(len(desc))
+		# end for debug
+
 		selected_db = db_dict['SIFT']
 
 		if len(selected_db) > 0:
