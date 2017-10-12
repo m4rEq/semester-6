@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Utilidades varias para usar con OpenCV
+Utilites for use with OpenCV
 '''
 
 import cv2
