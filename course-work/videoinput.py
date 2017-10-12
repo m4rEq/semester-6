@@ -2,54 +2,13 @@
 # -*- coding: utf-8 -*-
 
 '''
-Sencilla clase de lectura genérica de secuencias de imágenes de entrada.
-Puede leer de una sóla imagen de un archivo, o bien de una secuencia de éstas,
-o bien de un vídeo, o finalmente de una cámara. Se pueden especificar todos
-estos tipos de fuentes en la cadena de inicialización, así como un reescalado
-deseado (rows x cols), o si se desea que la fuente de imágenes cicle (vuelva
-al comienzo) al terminar, o bien directamente termine (en cuyo caso el método
-read simplemente devolverá None).
-
-Nota 1: Si los parámetros de inicialización no se ponen (o bien se ponen, pero
-explícitamente se hacen cero) entonces la imagen de entrada no se escala, y
-se proporciona según su tamaño original.
-
-Nota 2: La implementación prioriza la sencillez y legibilidad del código, de
-manera que apenas se realiza control de errores.
-
-Ejemplos posibles de cadenas válidas de inicialización:
-
-Lectura de archivo de vídeo sin escalar, y repitiendo al acabar (bucle):
-"/path/to/file.mp4:loop"
-
-Equivalente al anterior:
-"/path/to/file.mp4:rows=0:cols=0:loop"
-
-Similar, pero con otro tipo de contenedor (se soporta casi cualquier tipo de
-vídeo):
-"/path/to/file.avi"
-
-Lectura de secuencia de imágenes escalando sólo la anchura, y bucle al acabar:
-"/path/to/img-???.jpg:rows=0:cols=200:loop"
-
-Lectura de una sola imagen, escalada. Si se intenta una segunda lectura,
-devolverá None (al no haber bucle):
-"/path/to/img-001.jpg:rows=300:cols=400"
-
-Lectura de secuencia de imágenes, cada una a su tamaño original, y sin bucle
-(al acabarse las mismas el método read devolverá None):
-"/path/to/img-*.jpg"
-
-Lectura de la cámara numerada como 0:
-"0"
-
-Lectura de la cámara numerada como 1, con reescalado:
-"1:rows=100:cols=200"
-
-
-Para ver ejemplo de utilización, consultar el programa ejemplosimple.py:
-Uso:
-  ./ejemplosimple.py [<fuente de video>]
+Simple generic reading class for incoming image sequences.
+It can read from a single image of a file, or a sequence of them,
+or a video, or finally a camera. You can specify all
+these types of sources in the initialization string, as well as a rescaling
+(rows x cols), or if you want the image source to cycle (return
+at the end), or directly terminate (in which case the method
+read will simply return None).
 '''
 import glob
 import cv2
